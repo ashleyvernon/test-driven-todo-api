@@ -72,18 +72,17 @@ app.post('/api/todos', function create(req, res) {
   /* This endpoint will add a todo to our "database"
    * and respond with the newly created todo.
    */
-    // var newTodos = req.body;
-    // newTodos._id = newId;
-    // newId++;
+    //****both ways work****
+    var newTodos = req.body;
+    newTodos._id = newId;
+    newId++;
 
-    var newTodos = {
-      _id: newId++,
-      task: req.body.task,
-      description: req.body.description
-    }
-   // newTodos._id = req.params.id;
-   // newTodos.task = req.params.task;
-   // newTodos.description = req.params.description;
+    // var newTodos = {
+    //   _id: newId++,
+    //   task: req.body.task,
+    //   description: req.body.description
+    // }
+
     res.send(newTodos);
 });
 
